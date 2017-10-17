@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
         welcomeMessage: 'Welcome to express template engine sample'
-    })
+    });
 });
 
 app.get('/about', (req, res) => {
@@ -62,11 +62,19 @@ app.get('/about', (req, res) => {
     });
 });
 
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project Page',
+        projectMessage: 'Welcome Sri, this is your portfolio'
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         error: 'Unable to fulfill this request'
     });
-})
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
